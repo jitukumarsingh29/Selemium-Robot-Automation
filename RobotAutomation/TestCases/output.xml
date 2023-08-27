@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.8.3 on win32)" generated="20230827 12:46:46.444" rpa="false" schemaversion="4">
+<suite id="s1" name="TC 005 DDT" source="C:\VirtualDisk-D\Study\Automation Testing\Robot Framework\RobotAutomation\TestCases\TC_005_DDT.robot">
+<test id="s1-t1" name="Test title" line="10">
+<kw name="start and maximize browser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230827 12:46:47.039" level="INFO">Opening browser 'Chrome' to base url 'https://thetestingworld.com/testings/'.</msg>
+<status status="PASS" starttime="20230827 12:46:47.038" endtime="20230827 12:46:50.023"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230827 12:46:50.023" endtime="20230827 12:46:50.149"/>
+</kw>
+<status status="PASS" starttime="20230827 12:46:47.037" endtime="20230827 12:46:50.149"/>
+</kw>
+<kw name="fill signup form and click">
+<kw name="Read Number of row" library="Resources2">
+<var>${row}</var>
+<arg>Sheet1</arg>
+<kw name="Fetch No Of Rows" library="ReadExcelforTest">
+<var>${maxr}</var>
+<arg>${sheetname}</arg>
+<msg timestamp="20230827 12:46:50.151" level="INFO">${maxr} = 6</msg>
+<status status="PASS" starttime="20230827 12:46:50.150" endtime="20230827 12:46:50.151"/>
+</kw>
+<msg timestamp="20230827 12:46:50.151" level="INFO">${row} = 6</msg>
+<status status="PASS" starttime="20230827 12:46:50.150" endtime="20230827 12:46:50.151"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${row}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Read Excel data" library="Resources2">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:46:50.151" level="INFO">${cell_data} = fld_username1</msg>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:46:50.151"/>
+</kw>
+<msg timestamp="20230827 12:46:50.151" level="INFO">${username} = fld_username1</msg>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:46:50.151"/>
+</kw>
+<kw name="Read Excel data" library="Resources2">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:46:50.151" level="INFO">${cell_data} = fld_email1</msg>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:46:50.151"/>
+</kw>
+<msg timestamp="20230827 12:46:50.151" level="INFO">${email} = fld_email1</msg>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:46:50.151"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:50.151" level="INFO">Typing text 'fld_username1' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:46:50.305"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:50.306" level="INFO">Typing text 'fld_email1' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230827 12:46:50.305" endtime="20230827 12:46:50.378"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230827 12:46:50.378" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230827 12:46:50.378" endtime="20230827 12:46:50.426"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="tab-content1"]/form/div/input[1]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:50.427" level="INFO">Selecting checkbox '//*[@id="tab-content1"]/form/div/input[1]'.</msg>
+<status status="PASS" starttime="20230827 12:46:50.427" endtime="20230827 12:46:50.481"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Sign up']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:50.481" level="INFO">Clicking element '//input[@value='Sign up']'.</msg>
+<status status="PASS" starttime="20230827 12:46:50.481" endtime="20230827 12:46:50.544"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 12:46:55.548" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230827 12:46:50.544" endtime="20230827 12:46:55.549"/>
+</kw>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:46:55.549"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read Excel data" library="Resources2">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:46:55.556" level="INFO">${cell_data} = fld_username2</msg>
+<status status="PASS" starttime="20230827 12:46:55.555" endtime="20230827 12:46:55.556"/>
+</kw>
+<msg timestamp="20230827 12:46:55.556" level="INFO">${username} = fld_username2</msg>
+<status status="PASS" starttime="20230827 12:46:55.551" endtime="20230827 12:46:55.556"/>
+</kw>
+<kw name="Read Excel data" library="Resources2">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:46:55.556" level="INFO">${cell_data} = fld_email2</msg>
+<status status="PASS" starttime="20230827 12:46:55.556" endtime="20230827 12:46:55.556"/>
+</kw>
+<msg timestamp="20230827 12:46:55.556" level="INFO">${email} = fld_email2</msg>
+<status status="PASS" starttime="20230827 12:46:55.556" endtime="20230827 12:46:55.556"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:55.556" level="INFO">Typing text 'fld_username2' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230827 12:46:55.556" endtime="20230827 12:46:55.704"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:55.704" level="INFO">Typing text 'fld_email2' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230827 12:46:55.704" endtime="20230827 12:46:55.773"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230827 12:46:55.774" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230827 12:46:55.773" endtime="20230827 12:46:55.784"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="tab-content1"]/form/div/input[1]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:55.784" level="INFO">Selecting checkbox '//*[@id="tab-content1"]/form/div/input[1]'.</msg>
+<status status="PASS" starttime="20230827 12:46:55.784" endtime="20230827 12:46:55.806"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Sign up']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 12:46:55.807" level="INFO">Clicking element '//input[@value='Sign up']'.</msg>
+<status status="PASS" starttime="20230827 12:46:55.806" endtime="20230827 12:46:55.842"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 12:47:00.853" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230827 12:46:55.842" endtime="20230827 12:47:00.853"/>
+</kw>
+<status status="PASS" starttime="20230827 12:46:55.550" endtime="20230827 12:47:00.853"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Read Excel data" library="Resources2">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:00.859" level="INFO">${cell_data} = fld_username3</msg>
+<status status="PASS" starttime="20230827 12:47:00.856" endtime="20230827 12:47:00.859"/>
+</kw>
+<msg timestamp="20230827 12:47:00.859" level="INFO">${username} = fld_username3</msg>
+<status status="PASS" starttime="20230827 12:47:00.854" endtime="20230827 12:47:00.859"/>
+</kw>
+<kw name="Read Excel data" library="Resources2">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:00.859" level="INFO">${cell_data} = fld_email3</msg>
+<status status="PASS" starttime="20230827 12:47:00.859" endtime="20230827 12:47:00.859"/>
+</kw>
+<msg timestamp="20230827 12:47:00.859" level="INFO">${email} = fld_email3</msg>
+<status status="PASS" starttime="20230827 12:47:00.859" endtime="20230827 12:47:00.859"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:00.867" level="INFO">Typing text 'fld_username3' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230827 12:47:00.859" endtime="20230827 12:47:00.979"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:00.980" level="INFO">Typing text 'fld_email3' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230827 12:47:00.979" endtime="20230827 12:47:01.042"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230827 12:47:01.042" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230827 12:47:01.042" endtime="20230827 12:47:01.054"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="tab-content1"]/form/div/input[1]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:01.054" level="INFO">Selecting checkbox '//*[@id="tab-content1"]/form/div/input[1]'.</msg>
+<status status="PASS" starttime="20230827 12:47:01.054" endtime="20230827 12:47:01.075"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Sign up']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:01.075" level="INFO">Clicking element '//input[@value='Sign up']'.</msg>
+<status status="PASS" starttime="20230827 12:47:01.075" endtime="20230827 12:47:01.107"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 12:47:06.116" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230827 12:47:01.108" endtime="20230827 12:47:06.116"/>
+</kw>
+<status status="PASS" starttime="20230827 12:47:00.854" endtime="20230827 12:47:06.116"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Read Excel data" library="Resources2">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:06.118" level="INFO">${cell_data} = fld_username4</msg>
+<status status="PASS" starttime="20230827 12:47:06.117" endtime="20230827 12:47:06.118"/>
+</kw>
+<msg timestamp="20230827 12:47:06.118" level="INFO">${username} = fld_username4</msg>
+<status status="PASS" starttime="20230827 12:47:06.117" endtime="20230827 12:47:06.118"/>
+</kw>
+<kw name="Read Excel data" library="Resources2">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:06.120" level="INFO">${cell_data} = fld_email4</msg>
+<status status="PASS" starttime="20230827 12:47:06.120" endtime="20230827 12:47:06.120"/>
+</kw>
+<msg timestamp="20230827 12:47:06.120" level="INFO">${email} = fld_email4</msg>
+<status status="PASS" starttime="20230827 12:47:06.118" endtime="20230827 12:47:06.120"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:06.121" level="INFO">Typing text 'fld_username4' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230827 12:47:06.120" endtime="20230827 12:47:06.205"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:06.206" level="INFO">Typing text 'fld_email4' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230827 12:47:06.205" endtime="20230827 12:47:06.271"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230827 12:47:06.272" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230827 12:47:06.271" endtime="20230827 12:47:06.283"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="tab-content1"]/form/div/input[1]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:06.283" level="INFO">Selecting checkbox '//*[@id="tab-content1"]/form/div/input[1]'.</msg>
+<status status="PASS" starttime="20230827 12:47:06.283" endtime="20230827 12:47:06.304"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Sign up']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:06.305" level="INFO">Clicking element '//input[@value='Sign up']'.</msg>
+<status status="PASS" starttime="20230827 12:47:06.305" endtime="20230827 12:47:06.340"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 12:47:11.343" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230827 12:47:06.340" endtime="20230827 12:47:11.344"/>
+</kw>
+<status status="PASS" starttime="20230827 12:47:06.117" endtime="20230827 12:47:11.344"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Read Excel data" library="Resources2">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:11.345" level="INFO">${cell_data} = fld_username5</msg>
+<status status="PASS" starttime="20230827 12:47:11.344" endtime="20230827 12:47:11.345"/>
+</kw>
+<msg timestamp="20230827 12:47:11.345" level="INFO">${username} = fld_username5</msg>
+<status status="PASS" starttime="20230827 12:47:11.344" endtime="20230827 12:47:11.345"/>
+</kw>
+<kw name="Read Excel data" library="Resources2">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:11.346" level="INFO">${cell_data} = fld_email5</msg>
+<status status="PASS" starttime="20230827 12:47:11.346" endtime="20230827 12:47:11.346"/>
+</kw>
+<msg timestamp="20230827 12:47:11.346" level="INFO">${email} = fld_email5</msg>
+<status status="PASS" starttime="20230827 12:47:11.345" endtime="20230827 12:47:11.346"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:11.347" level="INFO">Typing text 'fld_username5' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230827 12:47:11.346" endtime="20230827 12:47:11.435"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:11.436" level="INFO">Typing text 'fld_email5' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230827 12:47:11.435" endtime="20230827 12:47:11.504"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230827 12:47:11.504" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230827 12:47:11.504" endtime="20230827 12:47:11.516"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="tab-content1"]/form/div/input[1]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:11.517" level="INFO">Selecting checkbox '//*[@id="tab-content1"]/form/div/input[1]'.</msg>
+<status status="PASS" starttime="20230827 12:47:11.516" endtime="20230827 12:47:11.543"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Sign up']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:11.544" level="INFO">Clicking element '//input[@value='Sign up']'.</msg>
+<status status="PASS" starttime="20230827 12:47:11.543" endtime="20230827 12:47:11.586"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 12:47:16.586" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230827 12:47:11.586" endtime="20230827 12:47:16.587"/>
+</kw>
+<status status="PASS" starttime="20230827 12:47:11.344" endtime="20230827 12:47:16.587"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Read Excel data" library="Resources2">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:16.590" level="INFO">${cell_data} = fld_username6</msg>
+<status status="PASS" starttime="20230827 12:47:16.590" endtime="20230827 12:47:16.590"/>
+</kw>
+<msg timestamp="20230827 12:47:16.590" level="INFO">${username} = fld_username6</msg>
+<status status="PASS" starttime="20230827 12:47:16.589" endtime="20230827 12:47:16.590"/>
+</kw>
+<kw name="Read Excel data" library="Resources2">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadExcelforTest">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20230827 12:47:16.590" level="INFO">${cell_data} = fld_email6</msg>
+<status status="PASS" starttime="20230827 12:47:16.590" endtime="20230827 12:47:16.590"/>
+</kw>
+<msg timestamp="20230827 12:47:16.590" level="INFO">${email} = fld_email6</msg>
+<status status="PASS" starttime="20230827 12:47:16.590" endtime="20230827 12:47:16.590"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:16.600" level="INFO">Typing text 'fld_username6' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230827 12:47:16.590" endtime="20230827 12:47:16.735"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:16.736" level="INFO">Typing text 'fld_email6' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230827 12:47:16.736" endtime="20230827 12:47:16.797"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230827 12:47:16.797" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230827 12:47:16.797" endtime="20230827 12:47:16.808"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="tab-content1"]/form/div/input[1]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:16.809" level="INFO">Selecting checkbox '//*[@id="tab-content1"]/form/div/input[1]'.</msg>
+<status status="PASS" starttime="20230827 12:47:16.808" endtime="20230827 12:47:16.831"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Sign up']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 12:47:16.831" level="INFO">Clicking element '//input[@value='Sign up']'.</msg>
+<status status="PASS" starttime="20230827 12:47:16.831" endtime="20230827 12:47:16.865"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 12:47:21.869" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230827 12:47:16.865" endtime="20230827 12:47:21.870"/>
+</kw>
+<status status="PASS" starttime="20230827 12:47:16.589" endtime="20230827 12:47:21.870"/>
+</iter>
+<status status="PASS" starttime="20230827 12:46:50.151" endtime="20230827 12:47:21.870"/>
+</for>
+<status status="PASS" starttime="20230827 12:46:50.149" endtime="20230827 12:47:21.871"/>
+</kw>
+<tag>DDT</tag>
+<status status="PASS" starttime="20230827 12:46:47.036" endtime="20230827 12:47:21.872"/>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20230827 12:46:46.446" endtime="20230827 12:47:21.877"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">DDT</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 005 DDT">TC 005 DDT</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
