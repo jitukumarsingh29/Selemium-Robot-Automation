@@ -1,6 +1,6 @@
 import openpyxl
 
-wk = openpyxl.load_workbook("C:/VirtualDisk-D/Study/Automation Testing/Robot Framework/TC_005_DDT.xlsx")
+wk = openpyxl.load_workbook("C:/VirtualDisk-D/Study/AutomationTesting/RobotFramework/TC_005_DDT.xlsx")
 
 
 def fetch_no_of_rows(sheetname):
